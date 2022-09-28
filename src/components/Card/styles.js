@@ -1,9 +1,11 @@
 import styled from "@emotion/styled";
 import buttonImage from '../../assets/icon-dice.svg'
 import dividerImg from '../../assets/pattern-divider-mobile.svg'
+import dividerDesktop from '../../assets/pattern-divider-desktop.svg'
+import { breakPoints as bp } from "../../styles/breakPoints";
 
 const Container = styled.div `
-  width: 100%;
+  width: 300px;
   height: auto;
   padding: 16px;
   display: flex;
@@ -11,10 +13,15 @@ const Container = styled.div `
   align-items: center;
   background-color: var(--blue);
   border-radius: 8px;
+
+  ${bp.desktop} {
+    width: 500px;
+  }
 `
 
 const Title = styled.h1 `
   font-size: 1.4rem;
+  font-weight: 200;
   color: var(--neon-green);
 `
 
@@ -25,16 +32,25 @@ const Content = styled.p `
   line-height: 2.4rem;
   color: var(--cyan);
   text-align: center;
+
+  ${bp.desktop} {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
 `
 
 const Divider = styled.span `
-  width: 200px;
+  width: 100%;
   height: 16px;
   margin: 0 0 20px;
   display: flex;
   background-image: url(${dividerImg});
   background-size: cover;
   background-position: center;
+
+  ${bp.desktop} {
+  background-image: url(${dividerDesktop});
+  }
 `
 
 const Button = styled.button `
@@ -47,6 +63,17 @@ const Button = styled.button `
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
+  cusor: pointer;
+
+  :hover {
+    -webkit-box-shadow: 3px 5px 16px -2px var(--neon-green)); 
+    box-shadow: 3px 5px 16px -2px var(--neon-green);
+  }
+
+  ${bp.desktop}{
+    width: 60px;
+    height: 60px;
+  }
 `
 export { Container, Title, Content, Divider, Button}
 
