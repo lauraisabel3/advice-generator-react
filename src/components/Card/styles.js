@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import buttonImage from '../../assets/icon-dice.svg'
 import dividerImg from '../../assets/pattern-divider-mobile.svg'
-import dividerDesktop from '../../assets/pattern-divider-desktop.svg'
 import { breakPoints as bp } from "../../styles/breakPoints";
 
 const Container = styled.div `
@@ -48,9 +47,6 @@ const Divider = styled.span `
   background-size: cover;
   background-position: center;
 
-  ${bp.desktop} {
-  background-image: url(${dividerDesktop});
-  }
 `
 
 const Button = styled.button `
